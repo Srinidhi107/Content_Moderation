@@ -1,0 +1,46 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Shared theme tokens keep colors/shadows consistent across pages instead of repeating raw hex values. */
+:root {
+	--bg: #f5f7fb;
+	--surface: #ffffff;
+	--surface-soft: #eef2f7;
+	--text: #1a2333;
+	--muted: #6b7280;
+	--primary: #0d9488;
+	--primary-dark: #0f766e;
+	--danger: #dc2626;
+	--radius-lg: 16px;
+	--radius-md: 12px;
+	--shadow-soft: 0 10px 30px rgba(15, 23, 42, 0.08);
+}
+
+/* Global page backdrop gives the app a softer social-product feel instead of a flat white screen. */
+body {
+	margin: 0;
+	min-height: 100vh;
+	background:
+		radial-gradient(circle at 10% 10%, #e6f8f6 0%, transparent 35%),
+		radial-gradient(circle at 90% 0%, #e8eefb 0%, transparent 40%),
+		var(--bg);
+	color: var(--text);
+	font-family: "Poppins", "Segoe UI", sans-serif;
+}
+
+/* Ensure page sections like Feed/CreatePost can use full-height layouts reliably. */
+#root {
+	min-height: 100vh;
+}
+
+/* Predictable box sizing makes spacing easier to control while building layouts with Tailwind. */
+* {
+	box-sizing: border-box;
+}
+
+/* Subtle selection color keeps even small interactions aligned with the brand palette. */
+::selection {
+	background: rgba(13, 148, 136, 0.18);
+	color: #0f172a;
+}
